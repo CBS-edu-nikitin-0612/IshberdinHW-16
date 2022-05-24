@@ -13,12 +13,22 @@ namespace Task2
             int N = 5;
             int[] ints = new int[N];
             Random random = new Random();
+            Console.WriteLine("Числа:");
             for (int i = 0; i < N; i++)
             {
-                ints[i] = random.Next();
+                ints[i] = random.Next(0, 100);
+                Console.WriteLine(ints[i]);
             }
-            Console.WriteLine(ints.Max());
+            Console.WriteLine("Max: " + ints.Max());
+            Console.WriteLine("Min: " + ints.Min());
+            Console.WriteLine("Avr: " + ints.Average());
+            Console.WriteLine("Нечетный числа:");
+            foreach (int num in ints.Where(x => x % 2 == 1))
+            {
+                Console.WriteLine(num);
+            }
 
+            //Delay
             Console.ReadKey();
         }
     }
